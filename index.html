@@ -3,23 +3,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Notfall-Vorräte & Rezepte – 2 Monate Autark (Deutschland)</title>
-  <meta name="description" content="Komplette Einkaufsliste, Rezepte und Wochenplan für 2 Monate Notfallvorsorge in Deutschland – mobile-first, übersichtlich und druckfreundlich." />
+  <title>Notfall-Vorräte & Rezepte – 2 Monate (Dracula Theme)</title>
+  <meta name="description" content="Komplette Einkaufsliste, Rezepte und Wochenplan für 2 Monate Notfallvorsorge in Deutschland – mobile-first, Dracula-Theme." />
   <style>
-    /* ============== Design-Variablen (leicht anpassbar) ============== */
+    /* ================= Dracula Theme =================
+       Palette: https://draculatheme.com/
+       background: #282a36
+       currentLine: #44475a
+       selection:   #44475a
+       foreground:  #f8f8f2
+       comment:     #6272a4
+       cyan:   #8be9fd
+       green:  #50fa7b
+       orange: #ffb86c
+       pink:   #ff79c6
+       purple: #bd93f9
+       red:    #ff5555
+       yellow: #f1fa8c
+    =================================================== */
     :root{
-      --bg: #0b0c10;
-      --card: #111217;
-      --elev: #171924;
-      --text: #e9edf1;
-      --muted: #9aa5b1;
-      --accent: #7cdfff;    /* sanftes Cyan */
-      --accent-2: #b89cff;  /* sanftes Lila */
-      --ok: #7bf1a8;
-      --warn: #ffd166;
-      --bad: #ff6b6b;
-      --border: #232638;
-      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --bg: #282a36;           /* Hintergrund */
+      --card: #2b2e3b;         /* Kartenflächen (leicht heller als bg) */
+      --elev: #2f3240;         /* erhöhte Flächen */
+      --text: #f8f8f2;         /* Vordergrund */
+      --muted: #9aa3cf;        /* abgeleitet aus comment */
+      --accent: #8be9fd;       /* Cyan */
+      --accent-2: #bd93f9;     /* Purple */
+      --ok: #50fa7b;           /* Grün */
+      --warn: #f1fa8c;         /* Gelb */
+      --bad: #ff5555;          /* Rot */
+      --border: #44475a;       /* Linien */
+      --shadow: 0 8px 24px rgba(0,0,0,.45);
       --radius: 18px;
       --radius-sm: 12px;
       --radius-lg: 26px;
@@ -29,30 +43,17 @@
       --maxw: 1100px;
     }
 
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg: #f7f7fb;
-        --card: #ffffff;
-        --elev: #ffffff;
-        --text: #0e1320;
-        --muted: #5f6b7a;
-        --accent: #0ea5e9;
-        --accent-2: #7c3aed;
-        --border: #e8eaf1;
-        --shadow: 0 10px 24px rgba(0,0,0,.06);
-      }
-    }
-
-    /* ============== Reset & Grundlayout ============== */
+    /* Immer Dracula nutzen (kein Light-Override) */
     *,*::before,*::after{ box-sizing: border-box; }
     html,body{ height:100%; }
     body{
       margin:0;
       font-family: var(--font);
       color: var(--text);
-      background: radial-gradient(1200px 800px at 80% -10%, rgba(124,223,255,.15), transparent 60%),
-                  radial-gradient(1000px 700px at -10% 20%, rgba(184,156,255,.12), transparent 65%),
-                  var(--bg);
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(139,233,253,.10), transparent 60%),
+        radial-gradient(1000px 700px at -10% 20%, rgba(189,147,249,.10), transparent 65%),
+        var(--bg);
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -63,25 +64,21 @@
 
     .wrap{ width:100%; max-width: var(--maxw); margin-inline:auto; padding: 18px; }
 
-    /* ============== Header / Hero ============== */
+    /* Header / Hero */
     header{
       position: sticky; top:0; z-index: 50;
       backdrop-filter: saturate(1.2) blur(10px);
-      background: color-mix(in oklab, var(--bg) 80%, transparent);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
       border-bottom: 1px solid var(--border);
     }
-    .brand{
-      display:flex; align-items:center; gap:10px; padding: 12px 18px;
-    }
+    .brand{ display:flex; align-items:center; gap:10px; padding: 12px 18px; }
     .logo{
       inline-size: 34px; block-size: 34px; border-radius: 10px;
       background:
         conic-gradient(from 180deg at 50% 50%, var(--accent), var(--accent-2) 50%, var(--accent) 100%);
-      box-shadow: 0 8px 18px rgba(0,0,0,.18);
+      box-shadow: 0 8px 18px rgba(0,0,0,.3);
     }
-    .brand h1{
-      font-size: 1.05rem; margin:0; letter-spacing: .3px; font-weight: 700;
-    }
+    .brand h1{ font-size: 1.05rem; margin:0; letter-spacing: .3px; font-weight: 700; }
 
     .hero{
       margin-top: 18px;
@@ -92,29 +89,29 @@
       overflow: clip;
     }
     .hero-inner{ padding: 24px; display:grid; gap:14px; }
-    .kicker{ color: var(--muted); font-weight: 600; letter-spacing: .6px; text-transform: uppercase; font-size:.78rem; }
+    .kicker{ color: #6272a4; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; font-size:.78rem; }
     .title{
       font-size: clamp(1.4rem, 3.8vw, 2.2rem);
       line-height: 1.15; margin:0;
-      background: linear-gradient(90deg, var(--text), color-mix(in oklab, var(--text) 75%, var(--accent)));
+      background: linear-gradient(90deg, var(--text), color-mix(in oklab, var(--text) 70%, var(--accent)));
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
     .subtitle{ color: var(--muted); margin:0; font-size: .98rem; }
     .hero-actions{ display:flex; gap:10px; flex-wrap: wrap; margin-top: 4px; }
     .btn{
       appearance: none; border: 1px solid var(--border); background: var(--elev);
-      color: var(--text); padding: 10px 14px; border-radius: 12px; font-weight: 600;
+      color: var(--text); padding: 10px 14px; border-radius: 12px; font-weight: 700;
       box-shadow: var(--shadow); cursor: pointer;
     }
     .btn.primary{
       border-color: transparent;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #0b1020;
-      text-shadow: 0 1px 0 rgba(255,255,255,.25);
+      color: #1b1e2a;
+      text-shadow: 0 1px 0 rgba(255,255,255,.18);
     }
     .btn:focus{ outline: 2px solid color-mix(in oklab, var(--accent) 60%, transparent); outline-offset: 2px; }
 
-    /* ============== Layout: Grid & Karten ============== */
+    /* Grid & Cards */
     .grid{ display:grid; gap: var(--grid-gap); }
     @media (min-width: 880px){
       .grid-2{ grid-template-columns: 1fr 1fr; }
@@ -131,21 +128,26 @@
     .muted{ color: var(--muted); }
     .pill{
       display:inline-flex; align-items:center; gap:8px;
-      padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: .8rem;
-      border:1px solid var(--border); background: color-mix(in oklab, var(--elev) 85%, transparent);
+      padding: 6px 10px; border-radius: 999px; font-weight: 800; font-size: .8rem;
+      border:1px solid var(--border);
+      background: color-mix(in oklab, var(--elev) 85%, transparent);
+      color: var(--text);
     }
 
-    /* ============== Tabellen (mobil → Karten) ============== */
+    /* Tabellen */
     .table{
       width:100%; border-collapse: collapse; font-size: .95rem; overflow: hidden;
       border: 1px solid var(--border); border-radius: var(--radius);
       background: var(--card);
     }
     .table th, .table td{ padding: 10px 12px; border-bottom:1px solid var(--border); vertical-align: top; }
-    .table th{ text-align:left; color: var(--muted); font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .6px; }
+    .table th{
+      text-align:left; color: #f1fa8c; /* Gelb für Header */
+      font-weight: 900; font-size: .8rem; text-transform: uppercase; letter-spacing: .6px;
+    }
     .table tr:last-child td{ border-bottom: none; }
 
-    /* Responsive: Tabelle als Karten auf schmalen Displays */
+    /* Responsive Tabelle → Karten */
     @media (max-width: 680px){
       .table, .table thead, .table tbody, .table th, .table td, .table tr{ display:block; }
       .table thead{ display:none; }
@@ -157,12 +159,12 @@
       }
       .table td::before{
         content: attr(data-label);
-        font-weight:700; color: var(--muted);
+        font-weight:900; color: #ff79c6; /* Pinke Labels auf Mobile */
       }
       .table tr:last-child td{ border-bottom:1px dashed var(--border); }
     }
 
-    /* ============== Akkordeon für Rezepte/FAQs ============== */
+    /* Akkordeon (Rezepte) */
     details{
       border: 1px solid var(--border);
       background: color-mix(in oklab, var(--card) 90%, transparent);
@@ -171,24 +173,33 @@
     }
     details + details{ margin-top: 10px; }
     summary{
-      cursor:pointer; font-weight: 700; list-style: none; outline: none;
+      cursor:pointer; font-weight: 900; list-style: none; outline: none;
+      color: var(--text);
     }
     summary::-webkit-details-marker{ display:none; }
-    summary .chev{ transition: transform .25s ease; display:inline-block; margin-right:8px; }
+    summary .chev{ transition: transform .25s ease; display:inline-block; margin-right:8px; color: var(--accent-2); }
     details[open] summary .chev{ transform: rotate(90deg); }
     .recipe-grid{ display:grid; gap: var(--grid-gap); }
     @media (min-width: 860px){ .recipe-grid{ grid-template-columns: repeat(2, 1fr);} }
 
-    /* ============== Checkliste ============== */
+    /* Checkliste */
     .checklist{ display:grid; gap:10px; }
     .checkitem{
       display:flex; align-items:flex-start; gap:12px; padding:10px 12px;
-      border:1px dashed var(--border); border-radius: 12px; background: color-mix(in oklab, var(--card) 85%, transparent);
+      border:1px dashed var(--border); border-radius: 12px;
+      background: color-mix(in oklab, var(--card) 85%, transparent);
     }
-    .checkitem input{ margin-top: 3px; inline-size: 20px; block-size: 20px; }
+    .checkitem input{
+      appearance: none; inline-size: 20px; block-size: 20px; margin-top: 3px; border-radius:6px;
+      border: 2px solid var(--border); background: transparent; cursor:pointer;
+    }
+    .checkitem input:checked{
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-color: transparent;
+    }
     .small{ font-size:.9rem; color: var(--muted); }
 
-    /* ============== Footer & Print ============== */
+    /* Footer & Print */
     footer{ color: var(--muted); font-size: .9rem; padding: 30px 18px 50px; text-align:center; }
     @media print{
       header, .hero-actions, .floating{ display:none !important; }
@@ -196,7 +207,7 @@
       .card, .hero{ box-shadow:none; border-color:#ddd; }
     }
 
-    /* ============== Floating Tools ============== */
+    /* Floating Tools */
     .floating{
       position: fixed; right: 14px; bottom: 14px; display:flex; flex-direction: column; gap:10px; z-index:60;
     }
@@ -217,7 +228,7 @@
       <div class="hero-inner">
         <span class="kicker">Deutschland · Urban Survival</span>
         <h2 class="title">Komplette Einkaufsliste, Rezepte & Wochenplan<br/>für <strong>2 Monate Autarkie</strong></h2>
-        <p class="subtitle">Mobile-first, druckfreundlich und sofort nutzbar. Mengenangaben pro Person. Geeignet für Discounter-Einkauf (Aldi, Lidl, Penny, Netto).</p>
+        <p class="subtitle">Mobile-first, druckfreundlich, Dracula-Theme. Mengenangaben pro Person. Discounter-tauglich (Aldi, Lidl, Penny, Netto).</p>
         <div class="hero-actions">
           <button class="btn primary" onclick="window.print()">🖨️ Als PDF drucken</button>
           <a class="btn" href="#liste">🛒 Zur Vorratsliste</a>
@@ -227,7 +238,7 @@
       </div>
     </section>
 
-    <!-- Kurzinfo-Karten -->
+    <!-- Info-Karten -->
     <section class="grid grid-3" style="margin-top:16px">
       <div class="card">
         <h3>Kalorienziel</h3>
@@ -239,34 +250,31 @@
       </div>
       <div class="card">
         <h3>Abwechslung</h3>
-        <p>Mischung aus Basis-Kohlenhydraten, Hülsenfrüchten, <strong>Konserven</strong>, Ölen und Vitaminen – plus einfacher Wochenplan.</p>
+        <p>Mischung aus Basis-KH, Hülsenfrüchten, <strong>Konserven</strong>, Ölen und Vitaminen – plus einfacher Wochenplan.</p>
       </div>
     </section>
 
     <!-- Vorratsliste -->
     <section id="liste" style="margin-top:22px" class="card">
       <h2>Vorratsliste (2 Monate · 1 Person)</h2>
-      <p class="muted">Tipp: Hake Positionen ab, während du durch den Discounter gehst. Mengen sind Richtwerte – runde nach Geschmack/Haushalt.</p>
+      <p class="muted">Hake Positionen ab, während du durch den Discounter gehst. Mengen sind Richtwerte – passe sie deinem Haushalt an.</p>
 
-      <!-- Checkliste (kompakt) -->
       <div class="checklist" style="margin:14px 0 18px">
         <label class="checkitem"><input type="checkbox" /> <span><strong>Reis</strong> – 15 kg (Parboiled bevorzugt)</span></label>
         <label class="checkitem"><input type="checkbox" /> <span><strong>Nudeln</strong> – 10 kg</span></label>
         <label class="checkitem"><input type="checkbox" /> <span><strong>Haferflocken</strong> – 8 kg</span></label>
         <label class="checkitem"><input type="checkbox" /> <span><strong>Knäckebrot/Zwieback</strong> – 3 kg</span></label>
-        <label class="checkitem"><input type="checkbox" /> <span><strong>Mehl</strong> – 5 kg &nbsp;·&nbsp; <strong>Trockenhefe</strong> – 10 P.</span></label>
+        <label class="checkitem"><input type="checkbox" /> <span><strong>Mehl</strong> – 5 kg · <strong>Trockenhefe</strong> – 10 P.</span></label>
         <label class="checkitem"><input type="checkbox" /> <span><strong>Linsen/Bohnen/Kichererbsen (trocken)</strong> – 6 kg gesamt</span></label>
-        <label class="checkitem"><input type="checkbox" /> <span><strong>Fisch-/Fleischkonserven</strong> – 28–32 Dosen gesamt</span></label>
+        <label class="checkitem"><input type="checkbox" /> <span><strong>Fisch-/Fleischkonserven</strong> – 28–32 Dosen</span></label>
         <label class="checkitem"><input type="checkbox" /> <span><strong>Gemüse-/Obstkonserven</strong> – 30+ Dosen/Gläser</span></label>
         <label class="checkitem"><input type="checkbox" /> <span><strong>Öl</strong> – 5 L · <strong>Nüsse</strong> – 3 kg · <strong>Erdnussbutter</strong> – 2 Gläser</span></label>
         <label class="checkitem"><input type="checkbox" /> <span><strong>Gewürze/Brühe</strong>, Salz 2 kg, Zucker 2 kg, Honig 1 kg</span></label>
         <label class="checkitem"><input type="checkbox" /> <span><strong>Schokolade</strong> – 10 Tafeln · <strong>Kaffee</strong> 500 g · <strong>Tee</strong> 2 P.</span></label>
-        <label class="checkitem"><input type="checkbox" /> <span><strong>Multivitamin</strong> 3 Röhrchen · <strong>Vitamin C</strong> 1 Röhrchen</span></label>
         <label class="checkitem"><input type="checkbox" /> <span><strong>Stillwasser</strong> 30–50 L · <strong>Filter/Entkeimung</strong></span></label>
         <label class="checkitem"><input type="checkbox" /> <span><strong>Brennspiritus</strong> 36 L · <strong>Kerzen/Powerbank</strong></span></label>
       </div>
 
-      <!-- Ausführliche Tabelle -->
       <div style="overflow:auto">
         <table class="table" aria-label="Ausführliche Vorratsliste">
           <thead>
@@ -276,177 +284,37 @@
           </thead>
           <tbody>
             <!-- Basis -->
-            <tr>
-              <td data-label="Kategorie">Basis-KH</td>
-              <td data-label="Produkt">Reis (Parboiled)</td>
-              <td data-label="Menge">15 kg</td>
-              <td data-label="Hinweise">gute Lagerfähigkeit, geringer Kochaufwand</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Basis-KH</td>
-              <td data-label="Produkt">Nudeln (Mix)</td>
-              <td data-label="Menge">10 kg</td>
-              <td data-label="Hinweise">Kochwasser salzen, mit Deckel kochen</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Basis-KH</td>
-              <td data-label="Produkt">Haferflocken</td>
-              <td data-label="Menge">8 kg</td>
-              <td data-label="Hinweise">heiß & kalt essbar, sehr sparsam im Brennstoff</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Brot/Backen</td>
-              <td data-label="Produkt">Knäckebrot/Zwieback</td>
-              <td data-label="Menge">3 kg</td>
-              <td data-label="Hinweise">lange haltbar, kein Kochen nötig</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Brot/Backen</td>
-              <td data-label="Produkt">Mehl + Trockenhefe</td>
-              <td data-label="Menge">5 kg + 10 P.</td>
-              <td data-label="Hinweise">Fladenbrot/Topfbrot möglich</td>
-            </tr>
+            <tr><td data-label="Kategorie">Basis-KH</td><td data-label="Produkt">Reis (Parboiled)</td><td data-label="Menge">15 kg</td><td data-label="Hinweise">gute Lagerfähigkeit, geringer Kochaufwand</td></tr>
+            <tr><td data-label="Kategorie">Basis-KH</td><td data-label="Produkt">Nudeln (Mix)</td><td data-label="Menge">10 kg</td><td data-label="Hinweise">mit Deckel kochen, Wasser sparen</td></tr>
+            <tr><td data-label="Kategorie">Basis-KH</td><td data-label="Produkt">Haferflocken</td><td data-label="Menge">8 kg</td><td data-label="Hinweise">heiß & kalt essbar, brennstoffsparend</td></tr>
+            <tr><td data-label="Kategorie">Brot/Backen</td><td data-label="Produkt">Knäckebrot/Zwieback</td><td data-label="Menge">3 kg</td><td data-label="Hinweise">kein Kochen nötig</td></tr>
+            <tr><td data-label="Kategorie">Brot/Backen</td><td data-label="Produkt">Mehl + Trockenhefe</td><td data-label="Menge">5 kg + 10 P.</td><td data-label="Hinweise">Fladenbrot/Topfbrot</td></tr>
             <!-- Eiweiß -->
-            <tr>
-              <td data-label="Kategorie">Eiweiß</td>
-              <td data-label="Produkt">Linsen (trocken)</td>
-              <td data-label="Menge">3 kg</td>
-              <td data-label="Hinweise">schnell garend, ideal für Eintopf</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Eiweiß</td>
-              <td data-label="Produkt">Bohnen (trocken)</td>
-              <td data-label="Menge">2 kg</td>
-              <td data-label="Hinweise">vorher einweichen spart Brennstoff</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Eiweiß</td>
-              <td data-label="Produkt">Kichererbsen (trocken)</td>
-              <td data-label="Menge">1 kg</td>
-              <td data-label="Hinweise">Curry/Salat</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Konserven</td>
-              <td data-label="Produkt">Thunfisch in Öl</td>
-              <td data-label="Menge">12 Dosen</td>
-              <td data-label="Hinweise">Eiweiß + Fett, Öl mitverwenden</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Konserven</td>
-              <td data-label="Produkt">Makrele/Hering in Tomate</td>
-              <td data-label="Menge">10 Dosen</td>
-              <td data-label="Hinweise">wärmend, würzig</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Konserven</td>
-              <td data-label="Produkt">Fertiggerichte (Gulasch/Chili/Huhn)</td>
-              <td data-label="Menge">10 Dosen</td>
-              <td data-label="Hinweise">schnell, wenig Brennstoff</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Konserven</td>
-              <td data-label="Produkt">Leber-/Fleischwurst</td>
-              <td data-label="Menge">6 Stück</td>
-              <td data-label="Hinweise">aufs Brot/zu Kraut</td>
-            </tr>
+            <tr><td data-label="Kategorie">Eiweiß</td><td data-label="Produkt">Linsen (trocken)</td><td data-label="Menge">3 kg</td><td data-label="Hinweise">schnell garend</td></tr>
+            <tr><td data-label="Kategorie">Eiweiß</td><td data-label="Produkt">Bohnen (trocken)</td><td data-label="Menge">2 kg</td><td data-label="Hinweise">vorher einweichen</td></tr>
+            <tr><td data-label="Kategorie">Eiweiß</td><td data-label="Produkt">Kichererbsen (trocken)</td><td data-label="Menge">1 kg</td><td data-label="Hinweise">Curry/Salat</td></tr>
+            <tr><td data-label="Kategorie">Konserven</td><td data-label="Produkt">Thunfisch in Öl</td><td data-label="Menge">12 Dosen</td><td data-label="Hinweise">Eiweiß + Fett, Öl mitnutzen</td></tr>
+            <tr><td data-label="Kategorie">Konserven</td><td data-label="Produkt">Makrele/Hering in Tomate</td><td data-label="Menge">10 Dosen</td><td data-label="Hinweise">würzig, sättigend</td></tr>
+            <tr><td data-label="Kategorie">Konserven</td><td data-label="Produkt">Fertiggerichte (Gulasch/Chili/Huhn)</td><td data-label="Menge">10 Dosen</td><td data-label="Hinweise">schnell, wenig Brennstoff</td></tr>
+            <tr><td data-label="Kategorie">Konserven</td><td data-label="Produkt">Leber-/Fleischwurst</td><td data-label="Menge">6 Stück</td><td data-label="Hinweise">aufs Brot/zu Kraut</td></tr>
             <!-- Gemüse/Obst -->
-            <tr>
-              <td data-label="Kategorie">Gemüse</td>
-              <td data-label="Produkt">Erbsen & Möhren</td>
-              <td data-label="Menge">10 Dosen</td>
-              <td data-label="Hinweise">für Eintöpfe/Beilage</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Gemüse</td>
-              <td data-label="Produkt">Mais</td>
-              <td data-label="Menge">6 Dosen</td>
-              <td data-label="Hinweise">mit Reis/Bohnen kombinieren</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Gemüse</td>
-              <td data-label="Produkt">Sauerkraut/Rotkohl</td>
-              <td data-label="Menge">4 Stück</td>
-              <td data-label="Hinweise">Vitamine, lange haltbar</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Obst</td>
-              <td data-label="Produkt">Dosenobst (Mix)</td>
-              <td data-label="Menge">6 Dosen</td>
-              <td data-label="Hinweise">für Frühstück/Dessert</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Obst</td>
-              <td data-label="Produkt">Apfelmus</td>
-              <td data-label="Menge">3 Gläser</td>
-              <td data-label="Hinweise">mit Hafer/als Snack</td>
-            </tr>
+            <tr><td data-label="Kategorie">Gemüse</td><td data-label="Produkt">Erbsen & Möhren</td><td data-label="Menge">10 Dosen</td><td data-label="Hinweise">für Eintöpfe/Beilage</td></tr>
+            <tr><td data-label="Kategorie">Gemüse</td><td data-label="Produkt">Mais</td><td data-label="Menge">6 Dosen</td><td data-label="Hinweise">mit Reis/Bohnen</td></tr>
+            <tr><td data-label="Kategorie">Gemüse</td><td data-label="Produkt">Sauerkraut/Rotkohl</td><td data-label="Menge">4 Stück</td><td data-label="Hinweise">Vitamine, haltbar</td></tr>
+            <tr><td data-label="Kategorie">Obst</td><td data-label="Produkt">Dosenobst (Mix)</td><td data-label="Menge">6 Dosen</td><td data-label="Hinweise">Frühstück/Dessert</td></tr>
+            <tr><td data-label="Kategorie">Obst</td><td data-label="Produkt">Apfelmus</td><td data-label="Menge">3 Gläser</td><td data-label="Hinweise">mit Hafer/als Snack</td></tr>
             <!-- Fette & Extras -->
-            <tr>
-              <td data-label="Kategorie">Fette</td>
-              <td data-label="Produkt">Öl (Raps/Sonnenblume)</td>
-              <td data-label="Menge">5 L</td>
-              <td data-label="Hinweise">Kalorien-Booster</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Fette</td>
-              <td data-label="Produkt">Butterschmalz/Kokosfett</td>
-              <td data-label="Menge">2 Gläser</td>
-              <td data-label="Hinweise">zum Braten, lange haltbar</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Energie</td>
-              <td data-label="Produkt">Nüsse/Studentenfutter</td>
-              <td data-label="Menge">3 kg</td>
-              <td data-label="Hinweise">Snack, hohes kcal/Volumen</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Aufstrich</td>
-              <td data-label="Produkt">Erdnussbutter</td>
-              <td data-label="Menge">2 Gläser</td>
-              <td data-label="Hinweise">Protein + Fett</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Süß</td>
-              <td data-label="Produkt">Honig & Zucker</td>
-              <td data-label="Menge">1 kg · 2 kg</td>
-              <td data-label="Hinweise">Süßen/Energie</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Würze</td>
-              <td data-label="Produkt">Salz, Pfeffer, Curry, Paprika, Chili, Brühe</td>
-              <td data-label="Menge">2 kg Salz; je 1 P.; Brühe 500 g</td>
-              <td data-label="Hinweise">Geschmack & Elektrolyte</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Moral</td>
-              <td data-label="Produkt">Schokolade</td>
-              <td data-label="Menge">10 Tafeln</td>
-              <td data-label="Hinweise">Stimmung & Energie</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Getränke</td>
-              <td data-label="Produkt">Kaffee & Tee</td>
-              <td data-label="Menge">500 g; 2 Packungen</td>
-              <td data-label="Hinweise">Moral & Wärme</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Vitamine</td>
-              <td data-label="Produkt">Multivitamin; Vitamin C</td>
-              <td data-label="Menge">3 Rö.; 1 Rö.</td>
-              <td data-label="Hinweise">Ausgleich bei Einseitigkeit</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Wasser</td>
-              <td data-label="Produkt">Stillwasser + Filter/Entkeimung</td>
-              <td data-label="Menge">30–50 L + 1 Gerät/Pck.</td>
-              <td data-label="Hinweise">Flusswasser zusätzlich abkochen/filtern</td>
-            </tr>
-            <tr>
-              <td data-label="Kategorie">Kochen</td>
-              <td data-label="Produkt">Brennspiritus</td>
-              <td data-label="Menge">36 L</td>
-              <td data-label="Hinweise">mit Deckel kochen, Isoliergaren</td>
-            </tr>
+            <tr><td data-label="Kategorie">Fette</td><td data-label="Produkt">Öl (Raps/Sonnenblume)</td><td data-label="Menge">5 L</td><td data-label="Hinweise">Kalorien-Booster</td></tr>
+            <tr><td data-label="Kategorie">Fette</td><td data-label="Produkt">Butterschmalz/Kokosfett</td><td data-label="Menge">2 Gläser</td><td data-label="Hinweise">lange haltbar</td></tr>
+            <tr><td data-label="Kategorie">Energie</td><td data-label="Produkt">Nüsse/Studentenfutter</td><td data-label="Menge">3 kg</td><td data-label="Hinweise">Snack, hohe Energiedichte</td></tr>
+            <tr><td data-label="Kategorie">Aufstrich</td><td data-label="Produkt">Erdnussbutter</td><td data-label="Menge">2 Gläser</td><td data-label="Hinweise">Protein + Fett</td></tr>
+            <tr><td data-label="Kategorie">Süß</td><td data-label="Produkt">Honig & Zucker</td><td data-label="Menge">1 kg · 2 kg</td><td data-label="Hinweise">Süßen/Energie</td></tr>
+            <tr><td data-label="Kategorie">Würze</td><td data-label="Produkt">Salz, Pfeffer, Curry, Paprika, Chili, Brühe</td><td data-label="Menge">2 kg Salz; je 1 P.; Brühe 500 g</td><td data-label="Hinweise">Geschmack & Elektrolyte</td></tr>
+            <tr><td data-label="Kategorie">Moral</td><td data-label="Produkt">Schokolade</td><td data-label="Menge">10 Tafeln</td><td data-label="Hinweise">Stimmung & Energie</td></tr>
+            <tr><td data-label="Kategorie">Getränke</td><td data-label="Produkt">Kaffee & Tee</td><td data-label="Menge">500 g; 2 Packungen</td><td data-label="Hinweise">Moral & Wärme</td></tr>
+            <tr><td data-label="Kategorie">Vitamine</td><td data-label="Produkt">Multivitamin; Vitamin C</td><td data-label="Menge">3 Rö.; 1 Rö.</td><td data-label="Hinweise">Ausgleich bei Einseitigkeit</td></tr>
+            <tr><td data-label="Kategorie">Wasser</td><td data-label="Produkt">Stillwasser + Filter/Entkeimung</td><td data-label="Menge">30–50 L + 1 Gerät/Pck.</td><td data-label="Hinweise">Flusswasser zusätzlich filtern/abkochen</td></tr>
+            <tr><td data-label="Kategorie">Kochen</td><td data-label="Produkt">Brennspiritus</td><td data-label="Menge">36 L</td><td data-label="Hinweise">Deckel & Isoliergaren nutzen</td></tr>
           </tbody>
         </table>
       </div>
@@ -457,7 +325,7 @@
     <!-- Rezepte -->
     <section id="rezepte" style="margin-top:22px" class="card">
       <h2>Rezepte (einfach & brennstoffsparend)</h2>
-      <p class="muted">Alle Rezepte basieren auf den obigen Vorräten. Mengenangaben für 1 Person; skaliere nach Bedarf.</p>
+      <p class="muted">Alle Rezepte basieren auf den obigen Vorräten. Mengen für 1 Person; skaliere nach Bedarf.</p>
 
       <div class="recipe-grid">
         <details open>
@@ -482,56 +350,23 @@
         <details open>
           <summary><span class="chev">▸</span> Hauptgerichte</summary>
           <div class="grid">
-            <div class="card">
-              <h3>Reis + Bohnen + Öl</h3>
-              <p>100 g Reis, 1 Dose Bohnen (abgespült), 1 EL Öl, Salz/Chili.</p>
-            </div>
-            <div class="card">
-              <h3>Nudeln mit Tomatenmark</h3>
-              <p>120 g Nudeln, 1–2 EL Tomatenmark, Brühepulver, Pfeffer. Kochwasser teilweise als Soße nutzen.</p>
-            </div>
-            <div class="card">
-              <h3>Linseneintopf</h3>
-              <p>120 g Linsen, 1 Dose Erbsen/Möhren, 500 ml Wasser, 1 TL Brühe, 1 EL Öl.</p>
-            </div>
-            <div class="card">
-              <h3>Thunfisch-Reis-Mais</h3>
-              <p>100 g Reis, 1 Dose Thunfisch in Öl, ½ Dose Mais, Pfeffer.</p>
-            </div>
-            <div class="card">
-              <h3>Nudeln + Gulasch</h3>
-              <p>120 g Nudeln, ½–1 Dose Gulasch. Kurz zusammenziehen lassen.</p>
-            </div>
-            <div class="card">
-              <h3>Kichererbsen-Curry</h3>
-              <p>250 g gekochte Kichererbsen, 1 TL Curry, 1 TL Öl, 150 ml Wasser, Salz.</p>
-            </div>
-            <div class="card">
-              <h3>Bohneneintopf</h3>
-              <p>1 Dose Kidney + ½ Dose Mais + 1 kleine Dose Tomate, Chili, Brühe.</p>
-            </div>
+            <div class="card"><h3>Reis + Bohnen + Öl</h3><p>100 g Reis, 1 Dose Bohnen (abgespült), 1 EL Öl, Salz/Chili.</p></div>
+            <div class="card"><h3>Nudeln mit Tomatenmark</h3><p>120 g Nudeln, 1–2 EL Tomatenmark, Brühepulver, Pfeffer. Kochwasser als Soße nutzen.</p></div>
+            <div class="card"><h3>Linseneintopf</h3><p>120 g Linsen, 1 Dose Erbsen/Möhren, 500 ml Wasser, 1 TL Brühe, 1 EL Öl.</p></div>
+            <div class="card"><h3>Thunfisch-Reis-Mais</h3><p>100 g Reis, 1 Dose Thunfisch in Öl, ½ Dose Mais, Pfeffer.</p></div>
+            <div class="card"><h3>Nudeln + Gulasch</h3><p>120 g Nudeln, ½–1 Dose Gulasch. Kurz zusammenziehen lassen.</p></div>
+            <div class="card"><h3>Kichererbsen-Curry</h3><p>250 g gekochte Kichererbsen, 1 TL Curry, 1 TL Öl, 150 ml Wasser, Salz.</p></div>
+            <div class="card"><h3>Bohneneintopf</h3><p>1 Dose Kidney + ½ Dose Mais + 1 kleine Dose Tomate, Chili, Brühe.</p></div>
           </div>
         </details>
 
         <details open>
           <summary><span class="chev">▸</span> Leichte Abendgerichte</summary>
           <div class="grid">
-            <div class="card">
-              <h3>Haferflocken-Suppe</h3>
-              <p>50 g Hafer, 400 ml Wasser, 1 TL Brühe, 1 TL Öl.</p>
-            </div>
-            <div class="card">
-              <h3>Reissuppe</h3>
-              <p>60 g Reis in 600 ml Wasser mit Brühe weich garen.</p>
-            </div>
-            <div class="card">
-              <h3>Sauerkraut & Wurst</h3>
-              <p>½ Glas Sauerkraut erwärmen, ½ Dose Wurstscheiben dazu.</p>
-            </div>
-            <div class="card">
-              <h3>Knäcke + Fisch</h3>
-              <p>2–3 Scheiben Knäcke mit Makrele/Hering aus der Dose.</p>
-            </div>
+            <div class="card"><h3>Haferflocken-Suppe</h3><p>50 g Hafer, 400 ml Wasser, 1 TL Brühe, 1 TL Öl.</p></div>
+            <div class="card"><h3>Reissuppe</h3><p>60 g Reis in 600 ml Wasser mit Brühe weich garen.</p></div>
+            <div class="card"><h3>Sauerkraut & Wurst</h3><p>½ Glas Sauerkraut erwärmen, ½ Dose Wurstscheiben dazu.</p></div>
+            <div class="card"><h3>Knäcke + Fisch</h3><p>2–3 Scheiben Knäcke mit Makrele/Hering aus der Dose.</p></div>
           </div>
         </details>
       </div>
@@ -543,62 +378,13 @@
       <p class="muted">Sieben Tage rotierend. Mit Gewürzen variieren, Konserven durchtauschen.</p>
 
       <div class="grid grid-2">
-        <div class="card">
-          <h3>Tag 1</h3>
-          <ul>
-            <li><strong>Früh:</strong> Haferbrei + Honig</li>
-            <li><strong>Mittag:</strong> Reis + Bohnen + Öl</li>
-            <li><strong>Abend:</strong> Knäcke + Thunfisch</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Tag 2</h3>
-          <ul>
-            <li><strong>Früh:</strong> Knäcke + Erdnussbutter</li>
-            <li><strong>Mittag:</strong> Nudeln + Tomatenmark</li>
-            <li><strong>Abend:</strong> Haferflocken-Suppe</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Tag 3</h3>
-          <ul>
-            <li><strong>Früh:</strong> Hafer + Apfelmus</li>
-            <li><strong>Mittag:</strong> Linseneintopf</li>
-            <li><strong>Abend:</strong> Reis + Sauerkraut + Wurst</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Tag 4</h3>
-          <ul>
-            <li><strong>Früh:</strong> Knäcke + Honig</li>
-            <li><strong>Mittag:</strong> Thunfisch-Reis-Mais</li>
-            <li><strong>Abend:</strong> Nudeln + Fischkonserve</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Tag 5</h3>
-          <ul>
-            <li><strong>Früh:</strong> Hafer + Nüsse</li>
-            <li><strong>Mittag:</strong> Bohneneintopf</li>
-            <li><strong>Abend:</strong> Knäcke + Dosenobst</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Tag 6</h3>
-          <ul>
-            <li><strong>Früh:</strong> Hafer + Zucker</li>
-            <li><strong>Mittag:</strong> Nudeln + Gulasch</li>
-            <li><strong>Abend:</strong> Reissuppe</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Tag 7</h3>
-          <ul>
-            <li><strong>Früh:</strong> Knäcke + Erdnussbutter</li>
-            <li><strong>Mittag:</strong> Kichererbsen-Curry</li>
-            <li><strong>Abend:</strong> Hafer + Apfelmus</li>
-          </ul>
-        </div>
+        <div class="card"><h3>Tag 1</h3><ul><li><strong>Früh:</strong> Haferbrei + Honig</li><li><strong>Mittag:</strong> Reis + Bohnen + Öl</li><li><strong>Abend:</strong> Knäcke + Thunfisch</li></ul></div>
+        <div class="card"><h3>Tag 2</h3><ul><li><strong>Früh:</strong> Knäcke + Erdnussbutter</li><li><strong>Mittag:</strong> Nudeln + Tomatenmark</li><li><strong>Abend:</strong> Haferflocken-Suppe</li></ul></div>
+        <div class="card"><h3>Tag 3</h3><ul><li><strong>Früh:</strong> Hafer + Apfelmus</li><li><strong>Mittag:</strong> Linseneintopf</li><li><strong>Abend:</strong> Reis + Sauerkraut + Wurst</li></ul></div>
+        <div class="card"><h3>Tag 4</h3><ul><li><strong>Früh:</strong> Knäcke + Honig</li><li><strong>Mittag:</strong> Thunfisch-Reis-Mais</li><li><strong>Abend:</strong> Nudeln + Fischkonserve</li></ul></div>
+        <div class="card"><h3>Tag 5</h3><ul><li><strong>Früh:</strong> Hafer + Nüsse</li><li><strong>Mittag:</strong> Bohneneintopf</li><li><strong>Abend:</strong> Knäcke + Dosenobst</li></ul></div>
+        <div class="card"><h3>Tag 6</h3><ul><li><strong>Früh:</strong> Hafer + Zucker</li><li><strong>Mittag:</strong> Nudeln + Gulasch</li><li><strong>Abend:</strong> Reissuppe</li></ul></div>
+        <div class="card"><h3>Tag 7</h3><ul><li><strong>Früh:</strong> Knäcke + Erdnussbutter</li><li><strong>Mittag:</strong> Kichererbsen-Curry</li><li><strong>Abend:</strong> Hafer + Apfelmus</li></ul></div>
       </div>
     </section>
 
@@ -620,14 +406,14 @@
   </div>
 
   <footer>
-    <p>Erstellt für die Notfallvorsorge in Deutschland · Mobile-first · © <span id="y"></span></p>
+    <p style="color:#6272a4">Erstellt im Dracula-Theme · © <span id="y"></span></p>
   </footer>
 
   <script>
-    // Jahr im Footer aktualisieren
+    // Jahr im Footer
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Progressive Enhancement: beim Öffnen eines details-Elements schließen wir andere in derselben Gruppe optional
+    // Optional: in Rezeptgruppen immer nur eine Sektion offen halten
     document.querySelectorAll('section .recipe-grid').forEach(group=>{
       group.addEventListener('toggle', (e)=>{
         const t = e.target;
