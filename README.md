@@ -1,1 +1,54 @@
-# Survival_List
+# Survival List
+
+Interaktive React-Anwendung für eine zweimonatige Notfall-Vorratshaltung in Deutschland. Die Seite kombiniert Einkaufsliste, Rezepte, Wochenplan und praktische Spartipps in einem druckfreundlichen Dracula-Theme.
+
+## Highlights
+- Checklisten, Tabelle und Daten bleiben komplett offline nutzbar.
+- Druck- und Scroll-Shortcuts (`Drucken`, `Nach oben`) für mobiles Shopping.
+- Rezepte als aufklappbare Kategorien mit Fokus auf Brennstoff- und Wassersparen.
+- Wochenplan (7 Tage) mit Mengenangaben pro Person, beliebig skalierbar.
+- Mobile-first Layout mit responsiven Tabellen, Details und Print-Stilen.
+
+## Tech-Stack
+- [Vite](https://vitejs.dev/) + [React 18](https://react.dev/)
+- Styling über eine zentrale Datei `src/styles/global.css` im Dracula-Look.
+- State-Management ausschließlich mit React Hooks (`useState`, `useCallback`).
+
+## Schnellstart
+```bash
+npm install
+npm run dev      # Entwicklungsserver (Standard: http://localhost:5173)
+npm run build    # Produktions-Build in dist/
+npm run preview  # Vorschau eines Production-Builds
+npm run lint     # Optional: ESLint gegen src/
+```
+
+## Projektstruktur
+```text
+src/
+├── App.jsx                 # Layout der Seite, orchestriert alle Sektionen
+├── main.jsx                # React-Vite Einstiegspunkt
+├── components/             # Wiederverwendbare UI-Elemente (Header, Footer, Buttons)
+├── sections/               # Inhaltliche Blöcke (Hero, Vorräte, Rezepte, Plan, Tipps)
+├── data/                   # Statische Daten für Checkliste, Tabelle, Rezepte, Plan, Tipps
+└── styles/
+    └── global.css          # Dracula-Theme, Responsive- und Print-Styles
+```
+
+## Inhalte & Datenquellen
+- `data/checklist.jsx`: Kurze Einkaufsliste mit interaktiven Checkboxen.
+- `data/inventory.js`: Ausführliche Vorratstabelle (Kategorie, Menge, Hinweise).
+- `data/recipes.js`: Rezeptgruppen (Frühstück, Hauptgerichte, Abend).
+- `data/mealPlan.js`: Wiederholbarer 7-Tage-Plan.
+- `data/infoCards.jsx` & `data/tips.js`: Kontextkarten und Spartipps rund um Wasser, Brennstoff und Rotation.
+
+## Bedienung & Offline-Nutzung
+- PWA-Features sind nicht implementiert, die Seite funktioniert jedoch vollständig ohne externe APIs.
+- `🖨️ Drucken` in Hero und Floating Actions erzeugt eine optimierte PDF/Print-Version.
+- Checkboxen werden im Browser-Speicher nicht persistiert; beim Reload beginnt die Liste leer.
+- Die Anwendung nutzt keine Cookies und ruft keine externen Ressourcen ab.
+
+## Weiterentwicklungsideen
+1. Checkbox-Status im `localStorage` sichern, um Abhaken über Sitzungen zu behalten.
+2. PWA-Unterstützung (Service Worker) für Offline-Caching.
+3. Zusätzliche Tabellen (z. B. Wasser-/Energiebedarf pro Haushalt) oder Export als CSV/PDF.
