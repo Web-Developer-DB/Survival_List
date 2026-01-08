@@ -1,5 +1,3 @@
-import { useCallback } from "react";
-
 const links = [
   { id: "liste", label: "🛒 Zur Vorratsliste" },
   { id: "rezepte", label: "🍲 Zu den Rezepten" },
@@ -7,12 +5,6 @@ const links = [
 ];
 
 export function HeroSection() {
-  const handleScroll = useCallback((targetId) => {
-    const target = document.getElementById(targetId);
-    if (!target) return;
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, []);
-
   return (
     <section className="hero">
       <div className="hero-glow" aria-hidden="true" />
@@ -20,33 +12,32 @@ export function HeroSection() {
         <div className="hero-copy">
           <span className="kicker">Deutschland · Urban Survival</span>
           <h2 className="title">
-            Alles, was du für <strong>60 Tage Autarkie</strong> brauchst – als
-            klare, druckbare Übersicht.
+            Alles, was du für <strong>10 Tage Autarkie</strong> brauchst – klar
+            und druckbar.
           </h2>
           <p className="subtitle">
-            Moderne Checkliste, Rezept-Sets und Wochenplan für 1 Person. Von
-            Discounter-Vorräten bis Brennstofftipps – mobil optimiert und ready
-            für den PDF-Druck.
+            Orientiert an den BBK-/DGE-Empfehlungen für Deutschland. Discounter
+            Einkaufsliste, einfache Rezepte und ein 10-Tage-Plan – mobil
+            optimiert und bereit für den PDF-Druck.
           </p>
           <div className="hero-actions">
             <button className="btn primary" onClick={() => window.print()}>
               🖨️ Als PDF speichern
             </button>
             {links.map((link) => (
-              <button
+              <a
                 key={link.id}
                 className="btn ghost"
-                type="button"
-                onClick={() => handleScroll(link.id)}
+                href={`#${link.id}`}
               >
                 {link.label}
-              </button>
+              </a>
             ))}
           </div>
           <div className="hero-meta">
             <div className="pill glow">🕒 15 Min Setup</div>
-            <div className="pill glow">🥫 120+ Vorrats-Teile</div>
-            <div className="pill subtle">📦 Druck- &amp; Offline-tauglich</div>
+            <div className="pill glow">🥫 10-Tage-Plan</div>
+            <div className="pill subtle">🇩🇪 Druck- &amp; Offline-tauglich</div>
           </div>
         </div>
 
@@ -60,7 +51,7 @@ export function HeroSection() {
               </span>
             </div>
             <p>
-              Kompakte Survival-Boards für Einkauf, Rezepte und Ablauf –{" "}
+              Kompakte Boards für Einkauf, Rezepte und Ablauf –{" "}
               <em>ohne App-Lärm</em>, dafür mit klaren Schritten.
             </p>
             <div className="progress">

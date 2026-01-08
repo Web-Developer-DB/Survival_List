@@ -3,17 +3,17 @@ export const recipeGroups = [
     title: "Frühstück",
     items: [
       {
-        name: "Haferbrei Basis",
-        description: "80 g Hafer + 250 ml Wasser, 1 TL Honig, optional 1 EL Nüsse.",
-        hint: "Tipp: Nur 1–2 Min. kochen, dann ziehen lassen."
+        name: "Haferbrei + Apfelmus",
+        description: "80 g Hafer mit 250 ml Wasser, 1–2 EL Apfelmus, Zimt.",
+        hint: "Nur kurz aufkochen, dann ziehen lassen."
       },
       {
-        name: "Hafer + Apfelmus",
+        name: "Overnight Oats (kalt)",
         description:
-          "80 g Hafer mit heißem Wasser quellen lassen, 3–4 EL Apfelmus unterheben."
+          "80 g Hafer + 200 ml Wasser, 1 EL Nüsse, 1 TL Honig. Über Nacht quellen lassen."
       },
       {
-        name: "Knäckebrot & Aufstrich",
+        name: "Knäcke + Aufstrich",
         description: "2–3 Scheiben mit Erdnussbutter oder Leberwurstkonserve."
       }
     ]
@@ -22,26 +22,26 @@ export const recipeGroups = [
     title: "Hauptgerichte",
     items: [
       {
-        name: "Reis + Bohnen + Öl",
-        description: "100 g Reis, 1 Dose Bohnen (abgespült), 1 EL Öl, Salz/Chili."
+        name: "Reis + Bohnen + Mais",
+        description: "100 g Reis, 1 Dose Bohnen, ½ Dose Mais, 1 EL Öl, Chili/Salz."
       },
       {
-        name: "Nudeln mit Tomatenmark",
+        name: "Nudeln + Tomaten-Linsen",
         description:
-          "120 g Nudeln, 1–2 EL Tomatenmark, Brühepulver, Pfeffer. Kochwasser als Soße nutzen."
+          "120 g Nudeln, 100 g gegarte Linsen, 1–2 EL Tomatenmark, Brühe, Pfeffer."
       },
       {
-        name: "Linseneintopf",
+        name: "Linsensuppe deutsch",
         description:
-          "120 g Linsen, 1 Dose Erbsen/Möhren, 500 ml Wasser, 1 TL Brühe, 1 EL Öl."
+          "120 g Linsen, 1 Dose Erbsen/Möhren, 500 ml Wasser, 1 TL Brühe, 1 TL Senf."
       },
       {
-        name: "Thunfisch-Reis-Mais",
+        name: "Reis + Thunfisch in Öl",
         description:
-          "100 g Reis, 1 Dose Thunfisch in Öl, ½ Dose Mais, Pfeffer."
+          "100 g Reis, 1 Dose Thunfisch in Öl, ½ TL Salz, Pfeffer. Öl als Soße nutzen."
       },
       {
-        name: "Nudeln + Gulasch",
+        name: "Nudeln + Gulasch (Dose)",
         description: "120 g Nudeln, ½–1 Dose Gulasch. Kurz zusammenziehen lassen."
       },
       {
@@ -50,9 +50,8 @@ export const recipeGroups = [
           "250 g gekochte Kichererbsen, 1 TL Curry, 1 TL Öl, 150 ml Wasser, Salz."
       },
       {
-        name: "Bohneneintopf",
-        description:
-          "1 Dose Kidney + ½ Dose Mais + 1 kleine Dose Tomate, Chili, Brühe."
+        name: "Kartoffelpüree + Fisch",
+        description: "1 Pck. Instant-Püree nach Anleitung, dazu 1 Dose Makrele/Hering."
       }
     ]
   },
@@ -72,9 +71,9 @@ export const recipeGroups = [
         description: "½ Glas Sauerkraut erwärmen, ½ Dose Wurstscheiben dazu."
       },
       {
-        name: "Knäcke + Fisch",
+        name: "Bohnen-Mais-Salat (kalt)",
         description:
-          "2–3 Scheiben Knäcke mit Makrele/Hering aus der Dose."
+          "1 Dose Bohnen, ½ Dose Mais, 1 EL Öl, Salz/Pfeffer. Optional Thunfisch dazu."
       }
     ]
   }
