@@ -1,17 +1,17 @@
 # Survival List
 
-Interaktive React-Anwendung für eine zweimonatige Notfall-Vorratshaltung in Deutschland. Die Seite kombiniert Einkaufsliste, Rezepte, Wochenplan und praktische Spartipps in einem druckfreundlichen Dracula-Theme.
+Interaktive React-Anwendung für eine 10-tägige Notfall-Vorratshaltung in Deutschland. Die Seite kombiniert Einkaufsliste, Rezepte, 10-Tage-Plan und praktische Spartipps in einem modernen, hellen Layout.
 
 ## Highlights
 - Checklisten, Tabelle und Daten bleiben komplett offline nutzbar.
 - Druck- und Scroll-Shortcuts (`Drucken`, `Nach oben`) für mobiles Shopping.
 - Rezepte als aufklappbare Kategorien mit Fokus auf Brennstoff- und Wassersparen.
-- Wochenplan (7 Tage) mit Mengenangaben pro Person, beliebig skalierbar.
+- 10-Tage-Plan mit Mahlzeiten pro Person, beliebig skalierbar.
 - Mobile-first Layout mit responsiven Tabellen, Details und Print-Stilen.
 
 ## Tech-Stack
 - [Vite](https://vitejs.dev/) + [React 18](https://react.dev/)
-- Styling über eine zentrale Datei `src/styles/global.css` im Dracula-Look.
+- Styling über eine zentrale Datei `src/styles/global.css` im hellen Natur-Look.
 - State-Management ausschließlich mit React Hooks (`useState`, `useCallback`).
 
 ## Schnellstart
@@ -39,7 +39,7 @@ src/
 - `data/checklist.jsx`: Kurze Einkaufsliste mit interaktiven Checkboxen.
 - `data/inventory.js`: Ausführliche Vorratstabelle (Kategorie, Menge, Hinweise).
 - `data/recipes.js`: Rezeptgruppen (Frühstück, Hauptgerichte, Abend).
-- `data/mealPlan.js`: Wiederholbarer 7-Tage-Plan.
+- `data/mealPlan.js`: 10-Tage-Plan.
 - `data/infoCards.jsx` & `data/tips.js`: Kontextkarten und Spartipps rund um Wasser, Brennstoff und Rotation.
 
 ## Bedienung & Offline-Nutzung

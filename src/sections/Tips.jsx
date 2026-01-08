@@ -2,8 +2,12 @@ import { survivalTips } from "../data/tips.js";
 
 export function TipsSection() {
   return (
-    <section className="card section-gap">
-      <h2>Kochen &amp; Wasser: Spartipps</h2>
+    <section id="tipps" className="card section-gap">
+      <div className="section-head">
+        <div>
+          <h2>Kochen &amp; Wasser: Spartipps</h2>
+        </div>
+      </div>
       <ul>
         {survivalTips.map((tip) => (
           <li key={tip.title}>

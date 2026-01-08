@@ -1,6 +1,6 @@
 export function FloatingActions() {
   return (
-    <div className="floating" aria-hidden="true">
+    <div className="floating" aria-label="Schnellaktionen">
       <button
         type="button"
         className="btn"

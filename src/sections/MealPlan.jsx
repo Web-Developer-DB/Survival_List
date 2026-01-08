@@ -3,10 +3,12 @@ import { mealPlan } from "../data/mealPlan.js";
 export function MealPlanSection() {
   return (
     <section id="plan" className="card section-gap">
-      <h2>Wochenplan (x8 für 2 Monate)</h2>
-      <p className="muted">
-        Sieben Tage rotierend. Mit Gewürzen variieren, Konserven durchtauschen.
-      </p>
+      <div className="section-head">
+        <div>
+          <h2>10-Tage-Plan (1 Person)</h2>
+          <p className="muted">Rezepte lassen sich tauschen oder wiederholen.</p>
+        </div>
+      </div>
 
       <div className="grid grid-2">
         {mealPlan.map((day) => (

@@ -9,10 +9,14 @@ export const survivalTips = [
   },
   {
     title: "Wasser",
-    text: "Trübes Wasser vorfiltern (Tuch/Kaffeefilter) → dann Filter/Tabletten → bei Zweifel zusätzlich abkochen."
+    text: "Leitungswasser jetzt abfüllen. Trübes Wasser vorfiltern (Tuch/Kaffeefilter) → dann Filter/Tabletten → bei Zweifel zusätzlich abkochen."
   },
   {
-    title: "Rotation",
-    text: "Vorräte im Alltag verbrauchen, neu kaufen (FIFO-Prinzip)."
+    title: "Lagerung",
+    text: "Kühl, dunkel, trocken lagern. Älteste Vorräte zuerst verbrauchen (FIFO)."
+  },
+  {
+    title: "Indoor-Kochen",
+    text: "Spiritus/Gaskocher nur gut gelüftet nutzen, CO-Gefahr beachten; Topf auf feuerfeste Unterlage."
   }
 ];

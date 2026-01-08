@@ -1,9 +1,17 @@
 export const checklistItems = [
   {
+    id: "water",
+    content: (
+      <>
+        <strong>Trinkwasser</strong> – 20–25 L · <strong>Filter/Tabletten</strong>
+      </>
+    )
+  },
+  {
     id: "rice",
     content: (
       <>
-        <strong>Reis</strong> – 15 kg (Parboiled bevorzugt)
+        <strong>Reis</strong> – 3 kg (Parboiled, kurzer Kochweg)
       </>
     )
   },
@@ -11,7 +19,7 @@ export const checklistItems = [
     id: "pasta",
     content: (
       <>
-        <strong>Nudeln</strong> – 10 kg
+        <strong>Nudeln</strong> – 2.5 kg
       </>
     )
   },
@@ -19,7 +27,7 @@ export const checklistItems = [
     id: "oats",
     content: (
       <>
-        <strong>Haferflocken</strong> – 8 kg
+        <strong>Haferflocken</strong> – 1.5 kg (kalt/quellbar)
       </>
     )
   },
@@ -27,15 +35,15 @@ export const checklistItems = [
     id: "knacke",
     content: (
       <>
-        <strong>Knäckebrot/Zwieback</strong> – 3 kg
+        <strong>Knäckebrot/Zwieback</strong> – 1.2 kg
       </>
     )
   },
   {
-    id: "flour",
+    id: "mash",
     content: (
       <>
-        <strong>Mehl</strong> – 5 kg · <strong>Trockenhefe</strong> – 10 P.
+        <strong>Kartoffelpüree (Instant)</strong> – 6–8 Portionen
       </>
     )
   },
@@ -43,7 +51,7 @@ export const checklistItems = [
     id: "legumes",
     content: (
       <>
-        <strong>Linsen/Bohnen/Kichererbsen (trocken)</strong> – 6 kg gesamt
+        <strong>Linsen/Bohnen/Kichererbsen (trocken)</strong> – 2 kg gesamt
       </>
     )
   },
@@ -51,7 +59,15 @@ export const checklistItems = [
     id: "canned-protein",
     content: (
       <>
-        <strong>Fisch-/Fleischkonserven</strong> – 28–32 Dosen
+        <strong>Fisch-/Fleischkonserven</strong> – 10–12 Dosen
+      </>
+    )
+  },
+  {
+    id: "canned-meals",
+    content: (
+      <>
+        <strong>Fertiggerichte/Eintöpfe</strong> – 6–8 Dosen
       </>
     )
   },
@@ -59,7 +75,7 @@ export const checklistItems = [
     id: "canned-produce",
     content: (
       <>
-        <strong>Gemüse-/Obstkonserven</strong> – 30+ Dosen/Gläser
+        <strong>Gemüse-/Obstkonserven</strong> – 12–14 Dosen/Gläser
       </>
     )
   },
@@ -67,8 +83,8 @@ export const checklistItems = [
     id: "fats-nuts",
     content: (
       <>
-        <strong>Öl</strong> – 5 L · <strong>Nüsse</strong> – 3 kg ·{" "}
-        <strong>Erdnussbutter</strong> – 2 Gläser
+        <strong>Öl</strong> – 1.5 L · <strong>Nüsse</strong> – 1 kg ·{" "}
+        <strong>Erdnussbutter</strong> – 1 Glas
       </>
     )
   },
@@ -76,7 +92,7 @@ export const checklistItems = [
     id: "seasoning",
     content: (
       <>
-        <strong>Gewürze/Brühe</strong>, Salz 2 kg, Zucker 2 kg, Honig 1 kg
+        <strong>Gewürze/Brühe</strong>, Salz 1 kg, Zucker 1 kg, Honig 500 g
       </>
     )
   },
@@ -84,16 +100,8 @@ export const checklistItems = [
     id: "comfort",
     content: (
       <>
-        <strong>Schokolade</strong> – 10 Tafeln · <strong>Kaffee</strong> 500 g ·{" "}
-        <strong>Tee</strong> 2 P.
-      </>
-    )
-  },
-  {
-    id: "water",
-    content: (
-      <>
-        <strong>Stillwasser</strong> 30–50 L · <strong>Filter/Entkeimung</strong>
+        <strong>Schokolade</strong> – 5 Tafeln · <strong>Kaffee/Tee</strong>{" "}
+        1–2 P. · <strong>Multivitamin</strong>
       </>
     )
   },
@@ -101,7 +109,8 @@ export const checklistItems = [
     id: "fuel",
     content: (
       <>
-        <strong>Brennspiritus</strong> 36 L · <strong>Kerzen/Powerbank</strong>
+        <strong>Brennstoff</strong> – 6–8 L Spiritus oder 4 Kartuschen ·{" "}
+        <strong>Powerbank/LED</strong>
       </>
     )
   }
