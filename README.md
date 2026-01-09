@@ -4,6 +4,7 @@ Interaktive React-Anwendung für eine 10-tägige Notfall-Vorratshaltung in Deuts
 
 ## Highlights
 - Checklisten, Tabelle und Daten bleiben komplett offline nutzbar.
+- Installierbar als PWA nach dem ersten Besuch; funktioniert danach auch ohne Netz.
 - Druck- und Scroll-Shortcuts (`Drucken`, `Nach oben`) für mobiles Shopping.
 - Rezepte als aufklappbare Kategorien mit Fokus auf Brennstoff- und Wassersparen.
 - 10-Tage-Plan mit Mahlzeiten pro Person, beliebig skalierbar.
@@ -32,7 +33,7 @@ src/
 ├── sections/               # Inhaltliche Blöcke (Hero, Vorräte, Rezepte, Plan, Tipps)
 ├── data/                   # Statische Daten für Checkliste, Tabelle, Rezepte, Plan, Tipps
 └── styles/
-    └── global.css          # Dracula-Theme, Responsive- und Print-Styles
+    └── global.css          # Light/Dark-Theme, Responsive- und Print-Styles
 ```
 
 ## Inhalte & Datenquellen
@@ -43,12 +44,13 @@ src/
 - `data/infoCards.jsx` & `data/tips.js`: Kontextkarten und Spartipps rund um Wasser, Brennstoff und Rotation.
 
 ## Bedienung & Offline-Nutzung
-- PWA-Features sind nicht implementiert, die Seite funktioniert jedoch vollständig ohne externe APIs.
+- PWA aktiv: Manifest + Service Worker, installierbar und offline nutzbar nach dem ersten Online-Ladevorgang.
+- Wenn die Installation möglich ist, erscheint oben im Header ein Button „App installieren“.
 - `🖨️ Drucken` in Hero und Floating Actions erzeugt eine optimierte PDF/Print-Version.
 - Checkboxen werden im Browser-Speicher nicht persistiert; beim Reload beginnt die Liste leer.
-- Die Anwendung nutzt keine Cookies und ruft keine externen Ressourcen ab.
+- Die Anwendung nutzt keine Cookies und ruft keine externen APIs ab; Google Fonts werden beim ersten Besuch geladen und gecached.
 
 ## Weiterentwicklungsideen
 1. Checkbox-Status im `localStorage` sichern, um Abhaken über Sitzungen zu behalten.
-2. PWA-Unterstützung (Service Worker) für Offline-Caching.
+2. Schriftarten komplett mitliefern oder precachen, um den ersten Offline-Start zu beschleunigen.
 3. Zusätzliche Tabellen (z. B. Wasser-/Energiebedarf pro Haushalt) oder Export als CSV/PDF.
