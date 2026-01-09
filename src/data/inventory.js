@@ -2,169 +2,157 @@ export const inventoryRows = [
   {
     category: "Basis-KH",
     product: "Reis (Parboiled)",
-    amount: "15 kg",
-    notes: "gute Lagerfähigkeit, geringer Kochaufwand"
+    amount: "3 kg",
+    notes: "schnell garend, Restwärme nutzen"
   },
   {
     category: "Basis-KH",
     product: "Nudeln (Mix)",
-    amount: "10 kg",
-    notes: "mit Deckel kochen, Wasser sparen"
+    amount: "2.5 kg",
+    notes: "mit Deckel kochen, Wasser weiterverwenden"
   },
   {
     category: "Basis-KH",
     product: "Haferflocken",
-    amount: "8 kg",
-    notes: "heiß & kalt essbar, brennstoffsparend"
+    amount: "1.5 kg",
+    notes: "kalt quellen lassen = Brennstoff sparen"
   },
   {
     category: "Brot/Backen",
     product: "Knäckebrot/Zwieback",
-    amount: "3 kg",
-    notes: "kein Kochen nötig"
+    amount: "1.2 kg",
+    notes: "kein Kochen, lange haltbar"
   },
   {
     category: "Brot/Backen",
-    product: "Mehl + Trockenhefe",
-    amount: "5 kg + 10 P.",
-    notes: "Fladenbrot/Topfbrot"
+    product: "Kartoffelpüree (Instant)",
+    amount: "6–8 Portionen",
+    notes: "nur heißes Wasser, ideal als Beilage"
   },
   {
     category: "Eiweiß",
-    product: "Linsen (trocken)",
-    amount: "3 kg",
-    notes: "schnell garend"
+    product: "Linsen/Kichererbsen/Bohnen (trocken)",
+    amount: "2 kg gesamt",
+    notes: "über Nacht einweichen, verkürzt Garzeit"
   },
   {
     category: "Eiweiß",
-    product: "Bohnen (trocken)",
-    amount: "2 kg",
-    notes: "vorher einweichen"
-  },
-  {
-    category: "Eiweiß",
-    product: "Kichererbsen (trocken)",
-    amount: "1 kg",
-    notes: "Curry/Salat"
-  },
-  {
-    category: "Konserven",
     product: "Thunfisch in Öl",
-    amount: "12 Dosen",
+    amount: "5 Dosen",
     notes: "Eiweiß + Fett, Öl mitnutzen"
   },
   {
-    category: "Konserven",
+    category: "Eiweiß",
     product: "Makrele/Hering in Tomate",
-    amount: "10 Dosen",
-    notes: "würzig, sättigend"
+    amount: "4 Dosen",
+    notes: "aufs Brot/zu Püree"
   },
   {
     category: "Konserven",
-    product: "Fertiggerichte (Gulasch/Chili/Huhn)",
-    amount: "10 Dosen",
-    notes: "schnell, wenig Brennstoff"
+    product: "Fertiggerichte/Eintopf (z. B. Gulasch, Chili)",
+    amount: "6–8 Dosen",
+    notes: "nur erwärmen, wenig Brennstoff"
   },
   {
-    category: "Konserven",
-    product: "Leber-/Fleischwurst",
-    amount: "6 Stück",
-    notes: "aufs Brot/zu Kraut"
+    category: "Aufschnitt",
+    product: "Leber-/Fleischwurst (Konserve)",
+    amount: "3–4 Stück",
+    notes: "aufs Knäcke, zu Sauerkraut"
   },
   {
     category: "Gemüse",
     product: "Erbsen & Möhren",
-    amount: "10 Dosen",
+    amount: "4–5 Dosen",
     notes: "für Eintöpfe/Beilage"
   },
   {
     category: "Gemüse",
     product: "Mais",
-    amount: "6 Dosen",
-    notes: "mit Reis/Bohnen"
+    amount: "3–4 Dosen",
+    notes: "mit Reis/Bohnen oder kalt"
   },
   {
     category: "Gemüse",
     product: "Sauerkraut/Rotkohl",
-    amount: "4 Stück",
-    notes: "Vitamine, haltbar"
+    amount: "2 Gläser",
+    notes: "Vitamin C, keine Kühlung"
   },
   {
     category: "Obst",
     product: "Dosenobst (Mix)",
-    amount: "6 Dosen",
-    notes: "Frühstück/Dessert"
+    amount: "4–5 Dosen",
+    notes: "Frühstück/Dessert, Saft mitverwenden"
   },
   {
     category: "Obst",
     product: "Apfelmus",
-    amount: "3 Gläser",
+    amount: "2 Gläser",
     notes: "mit Hafer/als Snack"
   },
   {
     category: "Fette",
     product: "Öl (Raps/Sonnenblume)",
-    amount: "5 L",
-    notes: "Kalorien-Booster"
+    amount: "1.5 L",
+    notes: "Kalorien-Booster, Braten & Dressing"
   },
   {
     category: "Fette",
     product: "Butterschmalz/Kokosfett",
-    amount: "2 Gläser",
-    notes: "lange haltbar"
+    amount: "1 Glas",
+    notes: "lange haltbar, hitzestabil"
   },
   {
     category: "Energie",
     product: "Nüsse/Studentenfutter",
-    amount: "3 kg",
+    amount: "1 kg",
     notes: "Snack, hohe Energiedichte"
   },
   {
     category: "Aufstrich",
     product: "Erdnussbutter",
-    amount: "2 Gläser",
+    amount: "1 Glas",
     notes: "Protein + Fett"
   },
   {
     category: "Süß",
     product: "Honig & Zucker",
-    amount: "1 kg · 2 kg",
+    amount: "0.5 kg · 1 kg",
     notes: "Süßen/Energie"
   },
   {
     category: "Würze",
     product: "Salz, Pfeffer, Curry, Paprika, Chili, Brühe",
-    amount: "2 kg Salz; je 1 P.; Brühe 500 g",
+    amount: "1 kg Salz; je 1 P.; Brühe 300 g",
     notes: "Geschmack & Elektrolyte"
   },
   {
     category: "Moral",
     product: "Schokolade",
-    amount: "10 Tafeln",
+    amount: "5 Tafeln",
     notes: "Stimmung & Energie"
   },
   {
     category: "Getränke",
     product: "Kaffee & Tee",
-    amount: "500 g; 2 Packungen",
+    amount: "250 g; 1–2 Packungen",
     notes: "Moral & Wärme"
   },
   {
     category: "Vitamine",
     product: "Multivitamin; Vitamin C",
-    amount: "3 Rö.; 1 Rö.",
+    amount: "1–2 Röhren",
     notes: "Ausgleich bei Einseitigkeit"
   },
   {
     category: "Wasser",
     product: "Stillwasser + Filter/Entkeimung",
-    amount: "30–50 L + 1 Gerät/Pck.",
-    notes: "Flusswasser zusätzlich filtern/abkochen"
+    amount: "20–25 L + 1 Gerät/Pck.",
+    notes: "Leitungswasser vorkochen/abfüllen"
   },
   {
     category: "Kochen",
     product: "Brennspiritus",
-    amount: "36 L",
+    amount: "6–8 L oder 4 Kartuschen",
     notes: "Deckel & Isoliergaren nutzen"
   }
 ];
