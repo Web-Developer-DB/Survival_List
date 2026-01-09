@@ -35,6 +35,9 @@
   --pill-glow-text: #10201b;
   --pill-bg: rgba(255, 255, 255, 0.9);
   --pill-subtle: rgba(255, 255, 255, 0.85);
+  --tag-bg: rgba(255, 255, 255, 0.85);
+  --tag-text: var(--text);
+  --tag-border: var(--border);
   --table-header-bg: rgba(44, 156, 141, 0.08);
   --table-row-even: rgba(44, 156, 141, 0.05);
   --table-row-hover: rgba(242, 100, 82, 0.08);
@@ -71,6 +74,9 @@
   --pill-glow-text: #0e1a14;
   --pill-bg: rgba(255, 255, 255, 0.08);
   --pill-subtle: rgba(255, 255, 255, 0.06);
+  --tag-bg: rgba(12, 20, 38, 0.7);
+  --tag-text: #e8f0ff;
+  --tag-border: rgba(255, 255, 255, 0.12);
   --table-header-bg: rgba(255, 255, 255, 0.04);
   --table-row-even: rgba(255, 255, 255, 0.03);
   --table-row-hover: rgba(255, 255, 255, 0.05);
@@ -530,9 +536,9 @@ header {
   font-size: 0.88rem;
   padding: 8px 10px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid var(--border);
-  color: var(--text);
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--tag-text);
 }
 
 .orbit {
