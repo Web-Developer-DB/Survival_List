@@ -12,11 +12,47 @@ const getInitialTheme = () => {
 
 export function Header() {
   const [theme, setTheme] = useState(getInitialTheme);
+  const [installPrompt, setInstallPrompt] = useState(null);
+  const [canInstall, setCanInstall] = useState(false);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem("theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (event) => {
+      event.preventDefault();
+      setInstallPrompt(event);
+      setCanInstall(true);
+    };
+
+    const handleAppInstalled = () => {
+      setInstallPrompt(null);
+      setCanInstall(false);
+    };
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    window.addEventListener("appinstalled", handleAppInstalled);
+
+    return () => {
+      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+      window.removeEventListener("appinstalled", handleAppInstalled);
+    };
+  }, []);
+
+  const handleInstall = async () => {
+    if (!installPrompt) return;
+    installPrompt.prompt();
+    try {
+      await installPrompt.userChoice;
+    } catch (error) {
+      console.error("Installation prompt failed:", error);
+    } finally {
+      setInstallPrompt(null);
+      setCanInstall(false);
+    }
+  };
 
   const toggleTheme = () => setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
@@ -56,6 +92,11 @@ export function Header() {
           >
             PDF / Druck
           </button>
+          {canInstall && (
+            <button type="button" className="btn tiny" onClick={handleInstall}>
+              App installieren
+            </button>
+          )}
           <button
             type="button"
             className="btn tiny ghost"
