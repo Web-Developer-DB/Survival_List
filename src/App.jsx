@@ -12,7 +12,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className="wrap">
+      <main id="content" className="wrap">
         <HeroSection />
         <InfoCardsSection />
         <InventorySection />

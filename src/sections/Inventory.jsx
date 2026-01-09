@@ -4,6 +4,11 @@ import { inventoryRows } from "../data/inventory.js";
 
 export function InventorySection() {
   const [checked, setChecked] = useState(() => new Set());
+  const totalItems = checklistItems.length;
+  const completedItems = checked.size;
+  const progressPercent = totalItems
+    ? Math.round((completedItems / totalItems) * 100)
+    : 0;
 
   const toggleItem = (itemId) => {
     setChecked((prev) => {
@@ -19,11 +24,34 @@ export function InventorySection() {
 
   return (
     <section id="liste" className="card section-gap">
-      <h2>Vorratsliste (2 Monate · 1 Person)</h2>
-      <p className="muted">
-        Hake Positionen ab, während du durch den Discounter gehst. Mengen sind
-        Richtwerte – passe sie deinem Haushalt an.
-      </p>
+      <div className="section-head">
+        <div>
+          <h2>Vorratsliste (10 Tage · 1 Person)</h2>
+          <p className="muted">
+            Hake Positionen ab, während du durch den Discounter gehst. Mengen
+            sind Richtwerte – passe sie deinem Haushalt an.
+          </p>
+        </div>
+        <div className="progress-card">
+          <span className="progress-title">Fortschritt</span>
+          <div className="progress-inline">
+            <strong>{completedItems}</strong>
+            <span className="muted">/ {totalItems} abgehakt</span>
+          </div>
+          <div
+            className="progress-track compact"
+            role="progressbar"
+            aria-valuenow={progressPercent}
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <span
+              className="progress-bar"
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
+        </div>
+      </div>
 
       <div className="checklist checklist-spacing">
         {checklistItems.map((item) => (
@@ -63,8 +91,8 @@ export function InventorySection() {
       </div>
 
       <p className="small">
-        Kalorien grob summiert: 225.000–240.000 kcal → ausreichend für 2.000
-        kcal/Tag × 60 Tage.
+        Kalorien grob summiert: ~20.000–22.000 kcal → ausreichend für 2.000
+        kcal/Tag × 10 Tage.
       </p>
     </section>
   );
